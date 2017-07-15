@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>ibook</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+	  <h1>Intervalles de fluctuation</h1>
+	  <p>Le <em>théorème central-limite</em> affirme que, dès 
+	  qu'un phénomène aléatoire est la résultante de plusieurs 
+	  causes indépendantes et d'ordre de grandeur petit, il est 
+	  décrit par une loi approximativement <em>gaussienne</em>. 
+	  On va déjà pour commencer illustrer ce théorème, puis, en 
+	   partant de cette approximation normale, on va évoquer 
+	   la notion d'estimation par intervalle: Lorsqu'un nombre 
+	   est considéré comme égal à 3&plusmn;0,2 on ne dit pas 
+	   seulement qu'il est compris entre 2,8 et 3,2 mais aussi 
+	   qu'il a plus de chances d'être voisin de 3 que de 2,8.</p>
+	   
+	   <h2>Théorème central-limite</h2>
+	   <p>Le point ci-dessous est muni d'une tortue, à laquelle 
+	   on demande d'effectuer 12 déplacements successifs de 
+	   longueur aléatoire uniforme sur [0;1]</p>
+
+	   <figure>
+	   <form action="https://www.dgpad.net/index.php" target="dgpad_frame_1500125516627" method="post" width="640" height="80"><input type="hidden" name="file_content" value="Ly8gQ29vcmRpbmF0ZXMgU3lzdGVtIDoKU2V0Q29vcmRzKDQ4NC41LDMxMiw0MCxmYWxzZSw5NjksNTc5KTsKCgovLyBHZW9tZXRyeSA6ClAxPVBvaW50KCJQMSIsLTEwLjczNzUsNi44MjUpOwpibGtfdHVydGxlX2V4cF9QMT1FeHByZXNzaW9uKCJibGtfdHVydGxlX2V4cF9QMSIsIiIsIiIsIiIsInZhciBibF9lZ2FlaGhjaWo9ZnVuY3Rpb24oKXtcblRVUlRMRV9JTklUKFwiUDFcIixQMSk7XG5ibG9ja2x5X3Zhcl9YID0gKFRVUlRMRV9QT1MoKSk7XG5mb3IgKHZhciBibG9ja2x5X3Zhcl9jb3VudCA9IDEgOyBibG9ja2x5X3Zhcl9jb3VudCA8PSAxMiA7IGJsb2NrbHlfdmFyX2NvdW50Kyspe1xuICBUVVJUTEVfTVYoKE1hdGgucmFuZG9tKCkpLGZhbHNlKTtcbn07XG5UVVJUTEVfUFJJTlQoKGQoKFRVUlRMRV9QT1MoKSksYmxvY2tseV92YXJfWCkpKTtcbnJldHVybiBUVVJUTEVfUkVTVUxUKClcbn07XG5ibF9lZ2FlaGhjaWooKSIsIi0xMC44NjI1IiwiNi41NSIpOwpibGtfdHVydGxlX2xpc3RfUDE9TGlzdCgiYmxrX3R1cnRsZV9saXN0X1AxIixibGtfdHVydGxlX2V4cF9QMSk7CgoKLy8gU3R5bGVzIDoKU1RMKFAxLCJjOiMwMDAwYjI7czo2O2Y6MzAiKTsKU1RMKGJsa190dXJ0bGVfZXhwX1AxLCJjOiM3ODAwMTM7aDoyO3M6NztmOjI0O3A6MjtjTDoyMDA7Y1BUOll6b2pOemd3TURFek8yZzZNanR6T2pFd08yWTZNekE9Iik7ClNUTChibGtfdHVydGxlX2xpc3RfUDEsImM6IzAwMDBiMjtzOjA7ZjozMDtwOjA7bm1pOnRydWU7c2c6MSIpOwpTZXRDb29yZHNTdHlsZSgiaXNBeGlzOmZhbHNlO2lzR3JpZDp0cnVlO2lzT3g6dHJ1ZTtpc095OnRydWU7aXNMb2NrT3g6ZmFsc2U7aXNMb2NrT3k6ZmFsc2U7Y2VudGVyWm9vbTpmYWxzZTtvbmx5UG9zaXRpdmU6ZmFsc2U7Y29sb3I6IzExMTExMTtmb250U2l6ZToxODtheGlzV2lkdGg6MTtncmlkV2lkdGg6MC4xIik7ClNldEdlbmVyYWxTdHlsZSgiYmFja2dyb3VuZC1jb2xvcjojRjhGOEY4O2RlZ3JlZTp0cnVlO2RyYWdtb3ZlYWJsZTp0cnVlIik7CgoKLy8gQmxvY2tseSA6CkJMSyhQMSx7Im9ubG9nbyI6eyJ4bWwiOiI8eG1sIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbFwiPjxibG9jayB0eXBlPVwidmFyaWFibGVzX3NldFwiIGlkPVwiI0FXdUo1cWNQeTE7QC8qZDs6M1RcIiB4PVwiLTI5XCIgeT1cIjE3M1wiPjxmaWVsZCBuYW1lPVwiVkFSXCI+WDwvZmllbGQ+PHZhbHVlIG5hbWU9XCJWQUxVRVwiPjxibG9jayB0eXBlPVwidHVydGxlX3Bvc2l0aW9uXCIgaWQ9XCJ1Yi1QfVF0TU9kfVI2cSUrcj1OWlwiPjwvYmxvY2s+PC92YWx1ZT48bmV4dD48YmxvY2sgdHlwZT1cImNvbnRyb2xzX3JlcGVhdF9leHRcIiBpZD1cIkd+RDdjSCstTV1NLjVRbDNAOTZ3XCI+PHZhbHVlIG5hbWU9XCJUSU1FU1wiPjxibG9jayB0eXBlPVwibWF0aF9udW1iZXJcIiBpZD1cIlE5WFBdK3tKSV1YV0koIWY/fG1AXCI+PGZpZWxkIG5hbWU9XCJOVU1cIj4xMjwvZmllbGQ+PC9ibG9jaz48L3ZhbHVlPjxzdGF0ZW1lbnQgbmFtZT1cIkRPXCI+PGJsb2NrIHR5cGU9XCJ0dXJ0bGVfbW92ZVwiIGlkPVwib2ZDUGpneiVMYntYSGpfUF9wPTNcIiBpbmxpbmU9XCJmYWxzZVwiPjxmaWVsZCBuYW1lPVwiRElSXCI+bW92ZUZvcndhcmQ8L2ZpZWxkPjxmaWVsZCBuYW1lPVwiVU5JVFNcIj51bjwvZmllbGQ+PHZhbHVlIG5hbWU9XCJWQUxVRVwiPjxzaGFkb3cgdHlwZT1cIm1hdGhfbnVtYmVyXCIgaWQ9XCJ2ZTlONUh7c0BXT1tqKHpeZ1h3V1wiPjxmaWVsZCBuYW1lPVwiTlVNXCI+MTwvZmllbGQ+PC9zaGFkb3c+PGJsb2NrIHR5cGU9XCJtYXRoX3JhbmRvbV9mbG9hdFwiIGlkPVwiNjhaPSxePWh0SVRnez07SzJpdFRcIj48L2Jsb2NrPjwvdmFsdWU+PC9ibG9jaz48L3N0YXRlbWVudD48bmV4dD48YmxvY2sgdHlwZT1cInR1cnRsZV9wcmludFwiIGlkPVwiaTtZKWZbR1dHNitSVD9SRmcwZmxcIj48dmFsdWUgbmFtZT1cIlRFWFRcIj48c2hhZG93IHR5cGU9XCJ0ZXh0XCIgaWQ9XCJYdTk4RmkrKEdwbl9EQCtaOmV6O1wiPjxmaWVsZCBuYW1lPVwiVEVYVFwiPnVuIHRleHRlPC9maWVsZD48L3NoYWRvdz48YmxvY2sgdHlwZT1cImRncGFkX2Rpc3RhbmNlXCIgaWQ9XCJmfW18LDhvTnFpfVpqU2ZrMTheWlwiIGlubGluZT1cImZhbHNlXCI+PHZhbHVlIG5hbWU9XCJGUk9NXCI+PGJsb2NrIHR5cGU9XCJ0dXJ0bGVfcG9zaXRpb25cIiBpZD1cIlZUSWFxVltHcz9FbjVsW1RJZkdDXCI+PC9ibG9jaz48L3ZhbHVlPjx2YWx1ZSBuYW1lPVwiVE9cIj48YmxvY2sgdHlwZT1cInZhcmlhYmxlc19nZXRcIiBpZD1cIjJfX15ecTZMNUZ+RzdSM2o3amROXCI+PGZpZWxkIG5hbWU9XCJWQVJcIj5YPC9maWVsZD48L2Jsb2NrPjwvdmFsdWU+PC9ibG9jaz48L3ZhbHVlPjwvYmxvY2s+PC9uZXh0PjwvYmxvY2s+PC9uZXh0PjwvYmxvY2s+PC94bWw+Iiwic3luYyI6ImJsb2NrbHlfdmFyX1ggPSAoVFVSVExFX1BPUygpKTtcbmZvciAodmFyIGJsb2NrbHlfdmFyX2NvdW50ID0gMSA7IGJsb2NrbHlfdmFyX2NvdW50IDw9IDEyIDsgYmxvY2tseV92YXJfY291bnQrKyl7XG4gIFRVUlRMRV9NVigoTWF0aC5yYW5kb20oKSksZmFsc2UpO1xufTtcblRVUlRMRV9QUklOVCgoZCgoVFVSVExFX1BPUygpKSxibG9ja2x5X3Zhcl9YKSkpOyJ9LCJjdXJyZW50Ijoib25sb2dvIn0pOwo="><input type="hidden" name="hide_ctrlpanel" value="true"><iframe name="dgpad_frame_1500125516627" width="640" height="80" src="about:blank" scrolling="no" frameborder="yes" oNlOAd="if (!this.parentNode.num) {this.parentNode.submit();this.parentNode.num=true}"></iframe></form>
+		   <figcaption>La tortue avance 12 fois</figcaption>
+	   </figure>
+	   
+	   
+	   <p>Voici les ordres donnés à la tortue :</p>
+	   
+	   <figure>
+		   <img src="images/p1f1.png"/>
+		   <figcaption>La recette de parcours d'une distance gaussienne</figcaption>
+	   </figure>
+	   
+	   <p>En déplaçant le point, on répète l'expérience, et on 
+	   constate après quelques répétitions que la distance parcourue 
+	   ne dépasse quasiment jamais 8, et qu'elle ne descend 
+	   quasiment jamais en-dessous de 4. Pourtant, <em>a priori</em>, 
+	   la tortue peut parcourir 12 fois une très petite distance, ou une 
+	   distance qui est 12 fois proche de 1, et toute distance 
+	   totale comprise entre 0 et 12 peut être parcourue. C'est 
+	   juste que dans les cas les plus fréquents, seules les distances 
+	   comprises entre 4 et 8 sont parcourues.</p>
+	   
+	   <h3>Loi normale</h3>
+	   <p>Le théorème central-limite dit aussi que la loi de densité 
+	   suivie par la distance totale est, à un facteur de normalisation près, 
+	   donnée par <em>e<sup>-(x-6)²/2</sup></em>. On va le vérifier 
+	   ci-dessous, avec le tracé, en bleu, de l'histogramme, et, 
+	   superposé, le tracé, en rouge, de la représentation graphique 
+	   de la fonction :</p>
+	   
+	   
+	   <figure>
+<form action="https://www.dgpad.net/index.php" target="dgpad_frame_1500133751242" method="post" width="480" height="320"><input type="hidden" name="file_content" value="Ly8gQ29vcmRpbmF0ZXMgU3lzdGVtIDoKU2V0Q29vcmRzKDMzLjUsMjMwLjk5OTk5OTk5OTk5OTk0LDM5Ljk5OTk5OTk5OTk5OTk5LGZhbHNlLDk2OSw1NzkpOwoKCi8vIEdlb21ldHJ5IDoKRTE9RXhwcmVzc2lvbigiRTEiLCIiLCIiLCIiLCJoPVtdO2Zvcih2YXIgbj0wO248MTIwO24rKyl7aC5wdXNoKDApO307Zm9yKHZhciBlPTA7ZTw0MDAwO2UrKyl7dmFyIFM9MDtmb3IodmFyIGk9MDtpPDEyO2krKyl7Uys9MTAqcmFuZG9tKCk7fTtoW2Zsb29yKFMpXSs9MC4wMn07bjE9W107Zm9yKHZhciBuPTA7bjwxMjA7bisrKXtuMS5wdXNoKFtuLzEwLGhbbl1dKX07bjEiLCItMC4zMzc1MDAwMDAwMDAwMDAxIiwiLTIuOTc1MDAwMDAwMDAwMDAyIik7CkUyPUV4cHJlc3Npb24oIkUyIiwiIiwiMCIsIjEyIiwiOC9zcXJ0KDIqXHUwM0MwKSpleHAoLSh4LTYpXjIvMikiLCIwLjQxMjUwMDAwMDAwMDAwMDEiLCItNC40NzUwMDAwMDAwMDAwMDIiKTsKTGlzdDE9TGlzdCgiTGlzdDEiLEUxKTsKZjE9Q3VydnVzKCJmMSIsIiIsIiIsIkUyKHgpIik7CgoKLy8gU3R5bGVzIDoKU1RMKEUxLCJjOiMyNTJjNzY7aDoxO3M6NztmOjI0O3A6MjtjTDoyMDA7Y1BUOll6b2pOemd3TURFek8yZzZNVHR6T2pFd08yWTZNekE9Iik7ClNUTChFMiwiYzojMjk0YjFmO2g6MTtzOjc7ZjoyNDtwOjI7Y0w6MjAwO2NQVDpZem9qTnpnd01ERXpPMmc2TVR0ek9qRXdPMlk2TXpBPSIpOwpTVEwoTGlzdDEsImM6IzAwMDBiMjtvOjAuMjtzOjA7ZjozMDtwOjA7c2c6MSIpOwpTVEwoZjEsImM6I2RlODY5MztvOjAuMjM7czoxLjU7ZjozMDtwOjAiKTsKU2V0Q29vcmRzU3R5bGUoImlzQXhpczp0cnVlO2lzR3JpZDp0cnVlO2lzT3g6dHJ1ZTtpc095OnRydWU7aXNMb2NrT3g6ZmFsc2U7aXNMb2NrT3k6ZmFsc2U7Y2VudGVyWm9vbTpmYWxzZTtvbmx5UG9zaXRpdmU6ZmFsc2U7Y29sb3I6IzExMTExMTtmb250U2l6ZToxODtheGlzV2lkdGg6MTtncmlkV2lkdGg6MC4xIik7ClNldEdlbmVyYWxTdHlsZSgiYmFja2dyb3VuZC1jb2xvcjojRjhGOEY4O2RlZ3JlZTp0cnVlO2RyYWdtb3ZlYWJsZTp0cnVlIik7CgoKLy8gVGV4dHMgOgpUZXh0KCJcdTAwYTcgbmFtZT1cIkxhbmNlciBsZSBzY3JpcHRcIiBzdHlsZT1cImZvbnQtc2l6ZToxNnB4O2NvbG9yOmJsdWVcIlxuXG5cdTAwYTciLDcwLDEwLDE4NSw0NiwiYzpyZ2JhKDU5LDc5LDExNSwwLjE4KTtzOjM7cjoxNTtwOjQiKTsK"><input type="hidden" name="hide_ctrlpanel" value="true"><iframe name="dgpad_frame_1500133751242" width="480" height="320" src="about:blank" scrolling="no" frameborder="yes" oNlOAd="if (!this.parentNode.num) {this.parentNode.submit();this.parentNode.num=true}"></iframe></form>
+		   <figcaption>histogramme des distances parcourues</figcaption>
+	   </figure>
+	   
+	   <p>L'histogramme et la courbe montrent qu'en effet, les 
+	   distances inférieures à 4, comme celles supérieures à 8, 
+	   apparaissent assez rarement: Environ une fois sur 20. On dit que 
+	   l'intervalle [4;8] est un <em>intervalle de fluctuation à 95 %</em>. 
+	   L'idée est d'écarter les valeurs anormalement petites ou anormalement grandes 
+	   (d'où le nom de <em>loi normale</em> donné à la loi gaussienne). 
+	   Dans l'expérience ci-dessous, on a colorié en bleu tout ce 
+	   qui est entre 0,25 (le premier vingtile avec les unités 
+	   choisies) et 4,75 (le dix-neuvième vingtile). Le nuage de points 
+	   (qui se recalcule à chaque clic sur le bouton) est automatiquement trié 
+	   de sorte qu'on puisse mieux compter les points <em>en dehors</em> de 
+	   la zone coloriée en bleu: Il y en a effectivement typiquement 
+	   moins de 10 (5 pourcents de 100 points, ça fait 5 points).</p>
+	   
+	   <figure>
+<form action="https://www.dgpad.net/index.php" target="dgpad_frame_1500136630859" method="post" width="480" height="320"><input type="hidden" name="file_content" value="Ly8gQ29vcmRpbmF0ZXMgU3lzdGVtIDoKU2V0Q29vcmRzKDQ2LjUsMjM3LDQwLGZhbHNlLDk2OSw1NzkpOwoKCi8vIEdlb21ldHJ5IDoKRTE9RXhwcmVzc2lvbigiRTEiLCIiLCIiLCIiLCJYPVtdO2Zvcih2YXIgbj0wO248MTAwO24rKyl7dmFyIFM9MDtmb3IodmFyIGk9MDtpPDEyO2krKyl7Uys9cmFuZG9tKCk7fTtYLnB1c2goUyl9O1guc29ydCgpO251YWdlPVtdO2Zvcih2YXIgbj0wO248MTAwO24rKyl7bnVhZ2UucHVzaChbWFtuXSxuLzIwXSl9O251YWdlIiwiMy44Mzc1IiwiLTMuMDc1Iik7CkUyPUV4cHJlc3Npb24oIkUyIiwiIiwiNCIsIjgiLCIxMC9zcXJ0KDJcdTAzQzApKmV4cCgtKHgtNileMi8yKSIsIjQuMzM3NSIsIi0zLjU3NSIpOwpFMz1FeHByZXNzaW9uKCJFMyIsIiIsIiIsIiIsIltbMCwwLjI1XSxbMCw0Ljc1XSxbMTIsNC43NV0sWzEyLDAuMjVdLFswLDAuMjVdXSIsIjEuMDg3NSIsIi0zLjMyNSIpOwpMaXN0MT1MaXN0KCJMaXN0MSIsRTEpOwpmMT1DdXJ2dXMoImYxIiwiIiwiIiwiRTIoeCkiKTsKTGlzdDI9TGlzdCgiTGlzdDIiLEUzKTsKCgovLyBTdHlsZXMgOgpTVEwoRTEsImM6IzRkNmE1MztoOjE7czo3O2Y6MjQ7cDoyO2NMOjIwMDtjUFQ6WXpvak56Z3dNREV6TzJnNk1UdHpPakV3TzJZNk16QT0iKTsKU1RMKEUyLCJjOiM0NjJhNGQ7aDoxO3M6NztmOjI0O3A6MjtjTDoyMDA7Y1BUOll6b2pOemd3TURFek8yZzZNVHR6T2pFd08yWTZNekE9Iik7ClNUTChFMywiYzojNzQ0ODZjO2g6MTtzOjc7ZjoyNDtwOjI7Y0w6MjAwO2NQVDpZem9qTnpnd01ERXpPMmc2TVR0ek9qRXdPMlk2TXpBPSIpOwpTVEwoTGlzdDEsImM6I2FiMDcyMDtzOjE7ZjozMDtwOjA7c2c6MSIpOwpTVEwoZjEsImM6Izc2MDAxMjtoOjE7bzowLjA4O3M6MTtmOjMwO3A6MCIpOwpTVEwoTGlzdDIsImM6IzAwMDBiMjtvOjAuMTM7czoxO2Y6MzA7cDowO3NnOjEiKTsKU2V0Q29vcmRzU3R5bGUoImlzQXhpczp0cnVlO2lzR3JpZDp0cnVlO2lzT3g6dHJ1ZTtpc095OnRydWU7aXNMb2NrT3g6ZmFsc2U7aXNMb2NrT3k6ZmFsc2U7Y2VudGVyWm9vbTpmYWxzZTtvbmx5UG9zaXRpdmU6ZmFsc2U7Y29sb3I6IzExMTExMTtmb250U2l6ZToxODtheGlzV2lkdGg6MTtncmlkV2lkdGg6MC4xIik7ClNldEdlbmVyYWxTdHlsZSgiYmFja2dyb3VuZC1jb2xvcjojRjhGOEY4O2RlZ3JlZTp0cnVlO2RyYWdtb3ZlYWJsZTp0cnVlIik7CgoKLy8gVGV4dHMgOgpUZXh0KCJcdTAwYTcgbmFtZT1cIkxhbmNlciBsZSBzY3JpcHRcIiBzdHlsZT1cImZvbnQtc2l6ZToxMnB4O2NvbG9yOmJsdWVcIlxuXG5cdTAwYTciLDcwLDEwLDEzNCw0NCwiYzpyZ2JhKDU5LDc5LDExNSwwLjE4KTtzOjM7cjoxNTtwOjQiKTsK"><input type="hidden" name="hide_ctrlpanel" value="true"><iframe name="dgpad_frame_1500136630859" width="480" height="320" src="about:blank" scrolling="no" frameborder="yes" oNlOAd="if (!this.parentNode.num) {this.parentNode.submit();this.parentNode.num=true}"></iframe></form>
+		   <figcaption>L'intervalle de fluctuation représenté sous la forme d'un rectangle</figcaption>
+	   </figure>
+	   
+	   <p>En fait, comme la demi-largeur de l'intervalle de fluctuation à 
+	   95% est 1,96 fois l'écart-type, on peut dire que, pour une 
+	   loi normale, <em>l'écart typique est le double de l'écart-type</em>. </p>
+	   
+  </body>
+</html>

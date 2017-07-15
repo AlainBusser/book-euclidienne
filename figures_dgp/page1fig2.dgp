@@ -1,0 +1,22 @@
+// Coordinates System :
+SetCoords(33.5,230.99999999999994,39.99999999999999,false,969,579);
+
+
+// Geometry :
+E1=Expression("E1","","","","h=[];for(var n=0;n<120;n++){h.push(0);};for(var e=0;e<4000;e++){var S=0;for(var i=0;i<12;i++){S+=10*random();};h[floor(S)]+=0.02};n1=[];for(var n=0;n<120;n++){n1.push([n/10,h[n]])};n1","-0.3375000000000001","-2.975000000000002");
+E2=Expression("E2","","0","12","8/sqrt(2*\u03C0)*exp(-(x-6)^2/2)","0.4125000000000001","-4.475000000000002");
+List1=List("List1",E1);
+f1=Curvus("f1","","","E2(x)");
+
+
+// Styles :
+STL(E1,"c:#252c76;h:1;s:7;f:24;p:2;cL:200;cPT:YzojNzgwMDEzO2g6MTtzOjEwO2Y6MzA=");
+STL(E2,"c:#294b1f;h:1;s:7;f:24;p:2;cL:200;cPT:YzojNzgwMDEzO2g6MTtzOjEwO2Y6MzA=");
+STL(List1,"c:#0000b2;o:0.2;s:0;f:30;p:0;sg:1");
+STL(f1,"c:#de8693;o:0.23;s:1.5;f:30;p:0");
+SetCoordsStyle("isAxis:true;isGrid:true;isOx:true;isOy:true;isLockOx:false;isLockOy:false;centerZoom:false;onlyPositive:false;color:#111111;fontSize:18;axisWidth:1;gridWidth:0.1");
+SetGeneralStyle("background-color:#F8F8F8;degree:true;dragmoveable:true");
+
+
+// Texts :
+Text("\u00a7 name=\"Lancer le script\" style=\"font-size:16px;color:blue\"\n\n\u00a7",70,10,185,46,"c:rgba(59,79,115,0.18);s:3;r:15;p:4");

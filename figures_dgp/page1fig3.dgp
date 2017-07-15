@@ -1,0 +1,26 @@
+// Coordinates System :
+SetCoords(46.5,237,40,false,969,579);
+
+
+// Geometry :
+E1=Expression("E1","","","","X=[];for(var n=0;n<100;n++){var S=0;for(var i=0;i<12;i++){S+=random();};X.push(S)};X.sort();nuage=[];for(var n=0;n<100;n++){nuage.push([X[n],n/20])};nuage","3.8375","-3.075");
+E2=Expression("E2","","4","8","10/sqrt(2\u03C0)*exp(-(x-6)^2/2)","4.3375","-3.575");
+E3=Expression("E3","","","","[[0,0.25],[0,4.75],[12,4.75],[12,0.25],[0,0.25]]","1.0875","-3.325");
+List1=List("List1",E1);
+f1=Curvus("f1","","","E2(x)");
+List2=List("List2",E3);
+
+
+// Styles :
+STL(E1,"c:#4d6a53;h:1;s:7;f:24;p:2;cL:200;cPT:YzojNzgwMDEzO2g6MTtzOjEwO2Y6MzA=");
+STL(E2,"c:#462a4d;h:1;s:7;f:24;p:2;cL:200;cPT:YzojNzgwMDEzO2g6MTtzOjEwO2Y6MzA=");
+STL(E3,"c:#74486c;h:1;s:7;f:24;p:2;cL:200;cPT:YzojNzgwMDEzO2g6MTtzOjEwO2Y6MzA=");
+STL(List1,"c:#ab0720;s:1;f:30;p:0;sg:1");
+STL(f1,"c:#760012;h:1;o:0.08;s:1;f:30;p:0");
+STL(List2,"c:#0000b2;o:0.13;s:1;f:30;p:0;sg:1");
+SetCoordsStyle("isAxis:true;isGrid:true;isOx:true;isOy:true;isLockOx:false;isLockOy:false;centerZoom:false;onlyPositive:false;color:#111111;fontSize:18;axisWidth:1;gridWidth:0.1");
+SetGeneralStyle("background-color:#F8F8F8;degree:true;dragmoveable:true");
+
+
+// Texts :
+Text("\u00a7 name=\"Lancer le script\" style=\"font-size:12px;color:blue\"\n\n\u00a7",70,10,134,44,"c:rgba(59,79,115,0.18);s:3;r:15;p:4");

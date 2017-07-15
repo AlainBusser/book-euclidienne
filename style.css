@@ -1,0 +1,24 @@
+body {
+	background: lightyellow;
+	font: 1em cursive;
+} 
+h1 {
+	color: darkRed;
+	text-align: center;
+	text-shadow: 0.04em 0.02em 0.08em gray;
+	}
+h2 {
+	color: darkRed;
+	text-shadow: 0.04em 0.02em 0.08em gray;
+	}
+figure {
+	border: 3px ridge brown;
+	background: white;
+	display: table;
+	float: center;
+	font: 1em italic; 
+}
+em {
+	font-weight: bold;
+	color: darkRed;
+}
