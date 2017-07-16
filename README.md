@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Géométrie des erreurs d'approximation
 
 You can use the [editor on GitHub](https://github.com/AlainBusser/book-euclidienne/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
