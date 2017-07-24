@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <title>ibook</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+	  <h1>Points gaussiens</h1>
+
+<p>On a vu à <a href="page_1.html">la page précédente</a> que si 
+la tortue avance 12 fois d'une longueur aléatoire entre 0 et 1, 
+sa position finale est approximativement gaussienne, donc approchée 
+par un intervalle "typique". Dans ce chapitre on va faire pareil 
+pour l'ordonnée de la tortue, ce qui va finalement la placer 
+dans une ellipse (généralisation bidimensionnelle de 
+l'intervalle de fluctuation), représentant un <em>point gaussien</em>.</p>
+<h2>Vers l'ellipse de Galton</h2>
+<p>Voici une variante du script du chapitre précédent :</p>
+<figure>
+	<img src="images/ellipse1.png"/>
+	<figcaption>12 pas en avant et 6 pas vers la gauche</figcaption>
+</figure>
+<p>La tortue a avancé 12 fois parallèlement à l'axe des abscisses 
+donc son abscisse finale est proche d'une variable aléatoire 
+normale d'espérance 6 et de variance 1, comme dans le chapitre 
+précédent. Mais elle a avancé 6 fois parallèlement à l'axe des ordonnées 
+donc son ordonnée est maintenant elle ausi aléatoire, approchée 
+par une variable aléatoire d'espérance 3 et de variance 1/2. 
+En plus tout ça a été fait dans un autre repère que celui de 
+DGPad, puisqu'avant tout déplacement la tortue a tourné de 30° 
+vers sa gauche. En manipulant la figure obtenue, on constate 
+que dans la plupart des cas, la position finale de la tortue se 
+trouve à l'intérieur d'une ellipse :</p>
+	   <figure>
+<form action="https://www.dgpad.net/index.php" target="dgpad_frame_1500899856958" method="post" width="420" height="480"><input type="hidden" name="file_content" value="Ly8gQ29vcmRpbmF0ZXMgU3lzdGVtIDoKU2V0Q29vcmRzKDQ3LjUsMzE3LDQwLGZhbHNlLDk2OSw1NzkpOwoKCi8vIEdlb21ldHJ5IDoKb3g9WF9heGlzKCJveCIpOwpveT1ZX2F4aXMoIm95Iik7ClAyPVBvaW50KCJQMiIsIlszKnNxcnQoMyktMy8yLDMrMypzcXJ0KDMpLzJdIiwiMCIpOwpQMz1Qb2ludCgiUDMiLCJbMnNxcnQoMyktMy8yLDIrM3NxcnQoMykvMl0iLCIwIik7ClA0PVBvaW50KCJQNCIsIlszc3FydCgzKS0zLzIrc3FydCgyKS8yLDMrM3NxcnQoMykvMi1zcXJ0KDYpLzJdIiwiMCIpOwpQNT1Qb2ludCgiUDUiLCJbM3NxcnQoMyktMy8yLXNxcnQoMikvMiwzKzNzcXJ0KDMpLzIrc3FydCg2KS8yXSIsIjAiKTsKUDY9UG9pbnQoIlA2IiwiWzRzcXJ0KDMpLTMvMiw0KzNzcXJ0KDMpLzJdIiwiMCIpOwpQNz1Qb2ludCgiUDciLCJbN3NxcnQoMykvMi0zLzItc3FydCg2KS80LDcvMiszc3FydCgzKS8yKzNzcXJ0KDIpLzRdIiwiMCIpOwpQMT1PcmRlcmVkSW50ZXJzZWN0aW9uKCJQMSIsb3ksb3gsMCk7ClF1YWQ9UXVhZHJpYygiUXVhZCIsUDMsUDUsUDQsUDcsUDYpOwpMMT1MaW5lKCJMMSIsUDMsUDYpOwpibGtfdHVydGxlX2V4cF9QMT1FeHByZXNzaW9uKCJibGtfdHVydGxlX2V4cF9QMSIsIiIsIiIsIiIsInZhciBibF9qampoYWRpZWM9ZnVuY3Rpb24oKXtcblRVUlRMRV9JTklUKFwiUDFcIixQMSk7XG5UVVJUTEVfVFVSTigoMzApKTtcbmZvciAodmFyIGJsb2NrbHlfdmFyX2NvdW50ID0gMSA7IGJsb2NrbHlfdmFyX2NvdW50IDw9IDYgOyBibG9ja2x5X3Zhcl9jb3VudCsrKXtcbiAgVFVSVExFX01WKChNYXRoLnJhbmRvbSgpKSxmYWxzZSk7XG4gIFRVUlRMRV9NVigoTWF0aC5yYW5kb20oKSksZmFsc2UpO1xuICBUVVJUTEVfVFVSTigoOTApKTtcbiAgVFVSVExFX01WKChNYXRoLnJhbmRvbSgpKSxmYWxzZSk7XG4gIFRVUlRMRV9UVVJOKC0oOTApKTtcbn07XG5yZXR1cm4gVFVSVExFX1JFU1VMVCgpXG59O1xuYmxfampqaGFkaWVjKCkiLCIwLjA2MjUiLCI2LjY3NSIpOwpibGtfdHVydGxlX2xpc3RfUDE9TGlzdCgiYmxrX3R1cnRsZV9saXN0X1AxIixibGtfdHVydGxlX2V4cF9QMSk7CgoKLy8gU3R5bGVzIDoKU1RMKFAyLCJjOiM3NjAwMTI7bzowLjY7czo0O2Y6MzAiKTsKU1RMKFAzLCJjOiMwMDAwYjI7aDoxO3M6NjtmOjMwIik7ClNUTChQNCwiYzojMDAwMGIyO2g6MTtzOjY7ZjozMCIpOwpTVEwoUDUsImM6IzAwMDBiMjtoOjE7czo2O2Y6MzAiKTsKU1RMKFA2LCJjOiMwMDAwYjI7aDoxO3M6NjtmOjMwIik7ClNUTChQNywiYzojMDAwMGIyO2g6MTtzOjY7ZjozMCIpOwpTVEwoUDEsImM6IzAwMDBiMjtzOjY7ZjozMCIpOwpTVEwoUXVhZCwiYzojOTY2NDAwO286MC4xNTtzOjE7ZjozMDtwOjUwMCIpOwpTVEwoTDEsImM6IzAwNjYzMztzOjE7ZjozMDtwOjA7ZGg6dHJ1ZSIpOwpTVEwoYmxrX3R1cnRsZV9leHBfUDEsImM6Izc4MDAxMztoOjI7czo3O2Y6MjQ7cDoyO2NMOjIwMDtjUFQ6WXpvak56Z3dNREV6TzJnNk1qdHpPakV3TzJZNk16QT0iKTsKU1RMKGJsa190dXJ0bGVfbGlzdF9QMSwiYzojMDAwMGIyO3M6MDtmOjMwO3A6MDtubWk6dHJ1ZTtzZzoxIik7ClNldENvb3Jkc1N0eWxlKCJpc0F4aXM6dHJ1ZTtpc0dyaWQ6dHJ1ZTtpc094OnRydWU7aXNPeTp0cnVlO2lzTG9ja094OmZhbHNlO2lzTG9ja095OmZhbHNlO2NlbnRlclpvb206ZmFsc2U7b25seVBvc2l0aXZlOmZhbHNlO2NvbG9yOiMxMTExMTE7Zm9udFNpemU6MTg7YXhpc1dpZHRoOjE7Z3JpZFdpZHRoOjAuMSIpOwpTZXRHZW5lcmFsU3R5bGUoImJhY2tncm91bmQtY29sb3I6I0Y4RjhGODtkZWdyZWU6dHJ1ZTtkcmFnbW92ZWFibGU6dHJ1ZSIpOwoKCi8vIEJsb2NrbHkgOgpCTEsoUDEseyJvbmxvZ28iOnsieG1sIjoiPHhtbCB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWxcIj48YmxvY2sgdHlwZT1cInR1cnRsZV90dXJuXCIgaWQ9XCJ1THRqVFBVLSVXKElpP3xdKSlNJVwiIHg9XCIxMlwiIHk9XCIxOFwiPjxmaWVsZCBuYW1lPVwiRElSXCI+dHVybkxlZnQ8L2ZpZWxkPjx2YWx1ZSBuYW1lPVwiVkFMVUVcIj48c2hhZG93IHR5cGU9XCJ0dXJ0bGVfYW5nbGVfaW5wdXRcIiBpZD1cImUuSW5VTUN2aHFoQkFTcVlRS3puXCI+PGZpZWxkIG5hbWU9XCJBTkdMRVwiPjMwPC9maWVsZD48L3NoYWRvdz48L3ZhbHVlPjxuZXh0PjxibG9jayB0eXBlPVwiY29udHJvbHNfcmVwZWF0X2V4dFwiIGlkPVwidztaa3llYk1ZN0NMWDI9UWlQfEZcIj48dmFsdWUgbmFtZT1cIlRJTUVTXCI+PGJsb2NrIHR5cGU9XCJtYXRoX251bWJlclwiIGlkPVwiTChafWorL157QGJoU0lXT0g6fVtcIj48ZmllbGQgbmFtZT1cIk5VTVwiPjY8L2ZpZWxkPjwvYmxvY2s+PC92YWx1ZT48c3RhdGVtZW50IG5hbWU9XCJET1wiPjxibG9jayB0eXBlPVwidHVydGxlX21vdmVcIiBpZD1cIis9WTRhaXFdO3h0LXElTGFVeiUoXCI+PGZpZWxkIG5hbWU9XCJESVJcIj5tb3ZlRm9yd2FyZDwvZmllbGQ+PGZpZWxkIG5hbWU9XCJVTklUU1wiPnVuPC9maWVsZD48dmFsdWUgbmFtZT1cIlZBTFVFXCI+PHNoYWRvdyB0eXBlPVwibWF0aF9udW1iZXJcIiBpZD1cIjp2WDosbTppI2ByZ3lpOWczckdgXCI+PGZpZWxkIG5hbWU9XCJOVU1cIj4yPC9maWVsZD48L3NoYWRvdz48YmxvY2sgdHlwZT1cIm1hdGhfcmFuZG9tX2Zsb2F0XCIgaWQ9XCJHOCFqSFtHQVlDaWdkdixPZHZYb1wiPjwvYmxvY2s+PC92YWx1ZT48bmV4dD48YmxvY2sgdHlwZT1cInR1cnRsZV9tb3ZlXCIgaWQ9XCI0Vl9tazo/JWItTis7WD9udyNKL1wiPjxmaWVsZCBuYW1lPVwiRElSXCI+bW92ZUZvcndhcmQ8L2ZpZWxkPjxmaWVsZCBuYW1lPVwiVU5JVFNcIj51bjwvZmllbGQ+PHZhbHVlIG5hbWU9XCJWQUxVRVwiPjxzaGFkb3cgdHlwZT1cIm1hdGhfbnVtYmVyXCIgaWQ9XCI6dlg6LG06aSNgcmd5aTlnM3JHYFwiPjxmaWVsZCBuYW1lPVwiTlVNXCI+MjwvZmllbGQ+PC9zaGFkb3c+PGJsb2NrIHR5cGU9XCJtYXRoX3JhbmRvbV9mbG9hdFwiIGlkPVwiXiw1JTsycnx3VG5sIUlQfUx4WHBcIj48L2Jsb2NrPjwvdmFsdWU+PG5leHQ+PGJsb2NrIHR5cGU9XCJ0dXJ0bGVfdHVyblwiIGlkPVwiSDZYLWlpUXleWFt3JUwqIV5Sak5cIj48ZmllbGQgbmFtZT1cIkRJUlwiPnR1cm5MZWZ0PC9maWVsZD48dmFsdWUgbmFtZT1cIlZBTFVFXCI+PHNoYWRvdyB0eXBlPVwidHVydGxlX2FuZ2xlX2lucHV0XCIgaWQ9XCJOYTBMYVcvXTROSVUyeSNyezdQI1wiPjxmaWVsZCBuYW1lPVwiQU5HTEVcIj45MDwvZmllbGQ+PC9zaGFkb3c+PC92YWx1ZT48bmV4dD48YmxvY2sgdHlwZT1cInR1cnRsZV9tb3ZlXCIgaWQ9XCJKaT86dlZyIzRRSTN7QiVeQDI3PVwiPjxmaWVsZCBuYW1lPVwiRElSXCI+bW92ZUZvcndhcmQ8L2ZpZWxkPjxmaWVsZCBuYW1lPVwiVU5JVFNcIj51bjwvZmllbGQ+PHZhbHVlIG5hbWU9XCJWQUxVRVwiPjxzaGFkb3cgdHlwZT1cIm1hdGhfbnVtYmVyXCIgaWQ9XCI6dlg6LG06aSNgcmd5aTlnM3JHYFwiPjxmaWVsZCBuYW1lPVwiTlVNXCI+MjwvZmllbGQ+PC9zaGFkb3c+PGJsb2NrIHR5cGU9XCJtYXRoX3JhbmRvbV9mbG9hdFwiIGlkPVwiYnFUPTplW0hZNW9UYklAO3x2ekdcIj48L2Jsb2NrPjwvdmFsdWU+PG5leHQ+PGJsb2NrIHR5cGU9XCJ0dXJ0bGVfdHVyblwiIGlkPVwiTWQrZWRRMCl3d1pgITpbRUlpbzFcIj48ZmllbGQgbmFtZT1cIkRJUlwiPnR1cm5SaWdodDwvZmllbGQ+PHZhbHVlIG5hbWU9XCJWQUxVRVwiPjxzaGFkb3cgdHlwZT1cInR1cnRsZV9hbmdsZV9pbnB1dFwiIGlkPVwiY2kzTVo/eXIyK3FMNTBQTHxnOGtcIj48ZmllbGQgbmFtZT1cIkFOR0xFXCI+OTA8L2ZpZWxkPjwvc2hhZG93PjwvdmFsdWU+PC9ibG9jaz48L25leHQ+PC9ibG9jaz48L25leHQ+PC9ibG9jaz48L25leHQ+PC9ibG9jaz48L25leHQ+PC9ibG9jaz48L3N0YXRlbWVudD48L2Jsb2NrPjwvbmV4dD48L2Jsb2NrPjwveG1sPiIsInN5bmMiOiJUVVJUTEVfVFVSTigoMzApKTtcbmZvciAodmFyIGJsb2NrbHlfdmFyX2NvdW50ID0gMSA7IGJsb2NrbHlfdmFyX2NvdW50IDw9IDYgOyBibG9ja2x5X3Zhcl9jb3VudCsrKXtcbiAgVFVSVExFX01WKChNYXRoLnJhbmRvbSgpKSxmYWxzZSk7XG4gIFRVUlRMRV9NVigoTWF0aC5yYW5kb20oKSksZmFsc2UpO1xuICBUVVJUTEVfVFVSTigoOTApKTtcbiAgVFVSVExFX01WKChNYXRoLnJhbmRvbSgpKSxmYWxzZSk7XG4gIFRVUlRMRV9UVVJOKC0oOTApKTtcbn07In0sImN1cnJlbnQiOiJvbmxvZ28ifSk7CgoKLy8gVGV4dHMgOgpUZXh0KCJcdTAwYTcgbmFtZT1cIkxhbmNlciBsZSBzY3JpcHRcIiBzdHlsZT1cImZvbnQtc2l6ZToxNnB4O2NvbG9yOmJsdWVcIlxuXHUwMGE3Iiw4NiwzNTUsMTQ4LDQ3LCJjOnJnYmEoNTksNzksMTE1LDAuMTgpO3M6MztyOjE1O3A6NCIpOwo="><input type="hidden" name="hide_ctrlpanel" value="true"><iframe name="dgpad_frame_1500899856958" width="420" height="480" src="about:blank" scrolling="no" frameborder="nyes" oNlOAd="if (!this.parentNode.num) {this.parentNode.submit();this.parentNode.num=true}"></iframe></form>
+		   <figcaption>L'ellipse de Galton approche la position finale de la tortue</figcaption>
+	   </figure>
+	   
+	   <h2>Définitions</h2>
+	   <p>On peut donner quelques définitions qui peuvent se 
+	   montrer utiles par la suite:
+	   <ul>
+		   <li>Le centre de l'ellipse est le <em>point moyen</em> du nuage de points. 
+		   Les coordonnées du point moyen sont l'espérance E<sub>x</sub> des 
+		   abscisses, et l'espérance E<sub>y</sub> des ordonnées.</li>
+		   <li>Le grand axe de l'ellipse est appelé <em>droite 
+		   de régression</em>, en référence aux travaux de 
+		   Galton qui avait constaté le phénomène de régression 
+		   vers la moyenne.</li>
+		   <li>Les demi-axes de l'ellipse sont
+		   <ul>
+			   <li>Le double de la variance V<sub>x</sub> des x;</li>
+			   <li>Le double de la variance V<sub>y</sub> des y</li>
+			   ceci dans un repère contenant les axes de l'ellipse.
+		   </ul>
+		   </li>
+		   <li>La matrice symétrique dont les coefficients diagonaux sont V<sub>x</sub>, 
+		   V<sub>y</sub>, et dont les coefficients hors de la diagonale 
+		   sont tous les deux égaux à la <em>covariance</em> 
+		   V<sub>xy</sub>=V<sub>yx</sub> de x et y, est appelée 
+		   <em>matrice de covariance</em> de x et y. Son importance 
+		   vient de ce qu'avec le point moyen, elle caractérise 
+		   un vecteur gaussien.</li>
+	   </ul>
+	   </p>
+	   <p>Voici un nuage de 100 points gaussiens, avec le dessin 
+	   de l'ellipse : On peut vérifier que la plupart des points 
+	   sont à l'intérieur de l'ellipse.</p>
+	   <figure>
+<form action="https://www.dgpad.net/index.php" target="dgpad_frame_1500902512344" method="post" width="800" height="400"><input type="hidden" name="file_content" value="Ly8gQ29vcmRpbmF0ZXMgU3lzdGVtIDoKU2V0Q29vcmRzKDI1OC41LDI4Niw0MCxmYWxzZSw5NjksNTc5KTsKCgovLyBHZW9tZXRyeSA6ClA2PVBvaW50KCJQNiIsIls2LDNdIiwiMCIpOwpFMT1FeHByZXNzaW9uKCJFMSIsInNYID0gIiwiMC41IiwiMiIsIjAuOTk1IiwiLTUuNDYyNSIsIjUuOSIpOwpFMj1FeHByZXNzaW9uKCJFMiIsInNZID0gIiwiMC41IiwiMiIsIjAuNzAyNSIsIi01LjQ2MjUiLCI0LjE1Iik7ClAxPVBvaW50KCJQMSIsIls2LTIqRTEsM10iLCIwIik7ClAyPVBvaW50KCJQMiIsIls2LDMrMipFMl0iLCIwIik7ClAzPVBvaW50KCJQMyIsIls2LDMtMipFMl0iLCIwIik7ClA0PVBvaW50KCJQNCIsIls2K0UxLDMrc3FydCgzKSpFMl0iLCIwIik7ClA1PVBvaW50KCJQNSIsIls2KzIqRTEsM10iLCIwIik7CkUzPUV4cHJlc3Npb24oIkUzIiwiIiwiIiwiIiwibnVhZ2U9W107Zm9yKHZhciBpPTA7aTwxMDA7aSsrKXtYPTYtNipFMTtZPTMtNipFMjtmb3IodmFyIGo9MDtqPDEyO2orKyl7WCs9RTEqcmFuZG9tKCk7WSs9RTIqcmFuZG9tKCl9O251YWdlLnB1c2goW1gsWV0pfTtudWFnZSIsIi00LjQ2MjUiLCItNS4zNSIpOwpRdWFkPVF1YWRyaWMoIlF1YWQiLFAxLFAyLFA0LFA1LFAzKTsKTGlzdDE9TGlzdCgiTGlzdDEiLEUzKTsKCgovLyBTdHlsZXMgOgpTVEwoUDYsImM6Izc2MDAxMjtzOjY7ZjozMDtzcDoxIik7ClNUTChFMSwiYzojMTAxMzI1O3M6NztmOjI0O3A6MjtjTDoyMDA7Y1BUOll6b2pOemd3TURFek8zTTZNVEE3Wmpvek1BPT0iKTsKU1RMKEUyLCJjOiMzMzBmMzY7czo3O2Y6MjQ7cDoyO2NMOjIwMDtjUFQ6WXpvak56Z3dNREV6TzNNNk1UQTdaam96TUE9PSIpOwpTVEwoUDEsImM6IzAwMDBiMjtoOjE7czo2O2Y6MzAiKTsKU1RMKFAyLCJjOiMwMDAwYjI7aDoxO3M6NjtmOjMwIik7ClNUTChQMywiYzojMDAwMGIyO2g6MTtzOjY7ZjozMCIpOwpTVEwoUDQsImM6IzAwMDBiMjtoOjE7czo2O2Y6MzAiKTsKU1RMKFA1LCJjOiMwMDAwYjI7aDoxO3M6NjtmOjMwIik7ClNUTChFMywiYzojMWYyZTE4O2g6MTtzOjc7ZjoyNDtwOjI7Y0w6MjAwO2NQVDpZem9qTnpnd01ERXpPMmc2TVR0ek9qRXdPMlk2TXpBPSIpOwpTVEwoUXVhZCwiYzojMDBhZGZmO286MC4xOTtzOjE7ZjozMDtwOjUwMCIpOwpTVEwoTGlzdDEsImM6IzAwMDBiMjtzOjE7ZjozMDtwOjA7c2c6MCIpOwpTZXRDb29yZHNTdHlsZSgiaXNBeGlzOnRydWU7aXNHcmlkOnRydWU7aXNPeDp0cnVlO2lzT3k6dHJ1ZTtpc0xvY2tPeDpmYWxzZTtpc0xvY2tPeTpmYWxzZTtjZW50ZXJab29tOmZhbHNlO29ubHlQb3NpdGl2ZTpmYWxzZTtjb2xvcjojMTExMTExO2ZvbnRTaXplOjE4O2F4aXNXaWR0aDoxO2dyaWRXaWR0aDowLjEiKTsKU2V0R2VuZXJhbFN0eWxlKCJiYWNrZ3JvdW5kLWNvbG9yOiNGOEY4Rjg7ZGVncmVlOnRydWU7ZHJhZ21vdmVhYmxlOnRydWUiKTsK"><input type="hidden" name="hide_ctrlpanel" value="true"><iframe name="dgpad_frame_1500902512344" width="800" height="400" src="about:blank" scrolling="no" frameborder="yes" oNlOAd="if (!this.parentNode.num) {this.parentNode.submit();this.parentNode.num=true}"></iframe></form>
+		   <figcaption>L'ellipse de Galton contient la plupart des points du nuage</figcaption>
+	   </figure>
+	  <p>Pour modéliser les erreurs de construction de figure, 
+	  on va donc dans toute la suite, représenter les points 
+	  par des ellipses, et les points libres par des cercles. 
+	  On va commencer par la modélisation de la règle qui glisse : 
+	  Une droite passant par deux points gaussiens.</p> 
+	   
+	   <footer><a href="page_3.html">page suivante</a></footer>
+	   
+  </body>
+</html>

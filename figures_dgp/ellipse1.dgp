@@ -1,0 +1,42 @@
+// Coordinates System :
+SetCoords(47.5,317,40,false,969,579);
+
+
+// Geometry :
+ox=X_axis("ox");
+oy=Y_axis("oy");
+P2=Point("P2","[3*sqrt(3)-3/2,3+3*sqrt(3)/2]","0");
+P3=Point("P3","[2sqrt(3)-3/2,2+3sqrt(3)/2]","0");
+P4=Point("P4","[3sqrt(3)-3/2+sqrt(2)/2,3+3sqrt(3)/2-sqrt(6)/2]","0");
+P5=Point("P5","[3sqrt(3)-3/2-sqrt(2)/2,3+3sqrt(3)/2+sqrt(6)/2]","0");
+P6=Point("P6","[4sqrt(3)-3/2,4+3sqrt(3)/2]","0");
+P7=Point("P7","[7sqrt(3)/2-3/2-sqrt(6)/4,7/2+3sqrt(3)/2+3sqrt(2)/4]","0");
+P1=OrderedIntersection("P1",oy,ox,0);
+Quad=Quadric("Quad",P3,P5,P4,P7,P6);
+L1=Line("L1",P3,P6);
+blk_turtle_exp_P1=Expression("blk_turtle_exp_P1","","","","var bl_hbgdbgdd=function(){\nTURTLE_INIT(\"P1\",P1);\nTURTLE_TURN((30));\nfor (var blockly_var_count = 1 ; blockly_var_count <= 6 ; blockly_var_count++){\n  TURTLE_MV((Math.random()),false);\n  TURTLE_MV((Math.random()),false);\n  TURTLE_TURN((90));\n  TURTLE_MV((Math.random()),false);\n  TURTLE_TURN(-(90));\n};\nreturn TURTLE_RESULT()\n};\nbl_hbgdbgdd()","0.0625","6.675");
+blk_turtle_list_P1=List("blk_turtle_list_P1",blk_turtle_exp_P1);
+
+
+// Styles :
+STL(P2,"c:#760012;o:0.6;s:4;f:30");
+STL(P3,"c:#0000b2;h:1;s:6;f:30");
+STL(P4,"c:#0000b2;h:1;s:6;f:30");
+STL(P5,"c:#0000b2;h:1;s:6;f:30");
+STL(P6,"c:#0000b2;h:1;s:6;f:30");
+STL(P7,"c:#0000b2;h:1;s:6;f:30");
+STL(P1,"c:#0000b2;s:6;f:30");
+STL(Quad,"c:#966400;o:0.15;s:1;f:30;p:500");
+STL(L1,"c:#006633;s:1;f:30;p:0;dh:true");
+STL(blk_turtle_exp_P1,"c:#780013;h:2;s:7;f:24;p:2;cL:200;cPT:YzojNzgwMDEzO2g6MjtzOjEwO2Y6MzA=");
+STL(blk_turtle_list_P1,"c:#0000b2;s:0;f:30;p:0;nmi:true;sg:1");
+SetCoordsStyle("isAxis:true;isGrid:true;isOx:true;isOy:true;isLockOx:false;isLockOy:false;centerZoom:false;onlyPositive:false;color:#111111;fontSize:18;axisWidth:1;gridWidth:0.1");
+SetGeneralStyle("background-color:#F8F8F8;degree:true;dragmoveable:true");
+
+
+// Blockly :
+BLK(P1,{"onlogo":{"xml":"<xml xmlns=\"http://www.w3.org/1999/xhtml\"><block type=\"turtle_turn\" id=\"uLtjTPU-%W(Ii?|]))M%\" x=\"12\" y=\"18\"><field name=\"DIR\">turnLeft</field><value name=\"VALUE\"><shadow type=\"turtle_angle_input\" id=\"e.InUMCvhqhBASqYQKzn\"><field name=\"ANGLE\">30</field></shadow></value><next><block type=\"controls_repeat_ext\" id=\"w;ZkyebMY7CLX2=QiP|F\"><value name=\"TIMES\"><block type=\"math_number\" id=\"L(Z}j+/^{@bhSIWOH:}[\"><field name=\"NUM\">6</field></block></value><statement name=\"DO\"><block type=\"turtle_move\" id=\"+=Y4aiq];xt-q%LaUz%(\"><field name=\"DIR\">moveForward</field><field name=\"UNITS\">un</field><value name=\"VALUE\"><shadow type=\"math_number\" id=\":vX:,m:i#`rgyi9g3rG`\"><field name=\"NUM\">2</field></shadow><block type=\"math_random_float\" id=\"G8!jH[GAYCigdv,OdvXo\"></block></value><next><block type=\"turtle_move\" id=\"4V_mk:?%b-N+;X?nw#J/\"><field name=\"DIR\">moveForward</field><field name=\"UNITS\">un</field><value name=\"VALUE\"><shadow type=\"math_number\" id=\":vX:,m:i#`rgyi9g3rG`\"><field name=\"NUM\">2</field></shadow><block type=\"math_random_float\" id=\"^,5%;2r|wTnl!IP}LxXp\"></block></value><next><block type=\"turtle_turn\" id=\"H6X-iiQy^X[w%L*!^RjN\"><field name=\"DIR\">turnLeft</field><value name=\"VALUE\"><shadow type=\"turtle_angle_input\" id=\"Na0LaW/]4NIU2y#r{7P#\"><field name=\"ANGLE\">90</field></shadow></value><next><block type=\"turtle_move\" id=\"Ji?:vVr#4QI3{B%^@27=\"><field name=\"DIR\">moveForward</field><field name=\"UNITS\">un</field><value name=\"VALUE\"><shadow type=\"math_number\" id=\":vX:,m:i#`rgyi9g3rG`\"><field name=\"NUM\">2</field></shadow><block type=\"math_random_float\" id=\"bqT=:e[HY5oTbI@;|vzG\"></block></value><next><block type=\"turtle_turn\" id=\"Md+edQ0)wwZ`!:[EIio1\"><field name=\"DIR\">turnRight</field><value name=\"VALUE\"><shadow type=\"turtle_angle_input\" id=\"ci3MZ?yr2+qL50PL|g8k\"><field name=\"ANGLE\">90</field></shadow></value></block></next></block></next></block></next></block></next></block></statement></block></next></block></xml>","sync":"TURTLE_TURN((30));\nfor (var blockly_var_count = 1 ; blockly_var_count <= 6 ; blockly_var_count++){\n  TURTLE_MV((Math.random()),false);\n  TURTLE_MV((Math.random()),false);\n  TURTLE_TURN((90));\n  TURTLE_MV((Math.random()),false);\n  TURTLE_TURN(-(90));\n};"},"current":"onlogo"});
+
+
+// Texts :
+Text("\u00a7 name=\"Lancer le script\" style=\"font-size:16px;color:blue\"\n\u00a7",86,355,148,47,"c:rgba(59,79,115,0.18);s:3;r:15;p:4");

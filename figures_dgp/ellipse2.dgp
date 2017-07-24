@@ -1,0 +1,32 @@
+// Coordinates System :
+SetCoords(258.5,286,40,false,969,579);
+
+
+// Geometry :
+P6=Point("P6","[6,3]","0");
+E1=Expression("E1","sX = ","0.5","2","0.995","-5.4625","5.9");
+E2=Expression("E2","sY = ","0.5","2","0.7025","-5.4625","4.15");
+P1=Point("P1","[6-2*E1,3]","0");
+P2=Point("P2","[6,3+2*E2]","0");
+P3=Point("P3","[6,3-2*E2]","0");
+P4=Point("P4","[6+E1,3+sqrt(3)*E2]","0");
+P5=Point("P5","[6+2*E1,3]","0");
+E3=Expression("E3","","","","nuage=[];for(var i=0;i<100;i++){X=6-6*E1;Y=3-6*E2;for(var j=0;j<12;j++){X+=E1*random();Y+=E2*random()};nuage.push([X,Y])};nuage","-4.4625","-5.35");
+Quad=Quadric("Quad",P1,P2,P4,P5,P3);
+List1=List("List1",E3);
+
+
+// Styles :
+STL(P6,"c:#760012;s:6;f:30;sp:1");
+STL(E1,"c:#101325;s:7;f:24;p:2;cL:200;cPT:YzojNzgwMDEzO3M6MTA7ZjozMA==");
+STL(E2,"c:#330f36;s:7;f:24;p:2;cL:200;cPT:YzojNzgwMDEzO3M6MTA7ZjozMA==");
+STL(P1,"c:#0000b2;h:1;s:6;f:30");
+STL(P2,"c:#0000b2;h:1;s:6;f:30");
+STL(P3,"c:#0000b2;h:1;s:6;f:30");
+STL(P4,"c:#0000b2;h:1;s:6;f:30");
+STL(P5,"c:#0000b2;h:1;s:6;f:30");
+STL(E3,"c:#1f2e18;h:1;s:7;f:24;p:2;cL:200;cPT:YzojNzgwMDEzO2g6MTtzOjEwO2Y6MzA=");
+STL(Quad,"c:#00adff;o:0.19;s:1;f:30;p:500");
+STL(List1,"c:#0000b2;s:1;f:30;p:0;sg:0");
+SetCoordsStyle("isAxis:true;isGrid:true;isOx:true;isOy:true;isLockOx:false;isLockOy:false;centerZoom:false;onlyPositive:false;color:#111111;fontSize:18;axisWidth:1;gridWidth:0.1");
+SetGeneralStyle("background-color:#F8F8F8;degree:true;dragmoveable:true");
